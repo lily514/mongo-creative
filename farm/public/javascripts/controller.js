@@ -62,11 +62,18 @@ function($scope, $http) {
 		console.log("start recording");
 		$scope.song = []; // emptying out the array so they get a blank slate every time they start recording
 		isRecording = true;
+		$("#record").prop('disabled', true);
+		$("#record").text('Recording...');
+		$("#stopRecord").prop('disabled', false);
+
 	});
 
 	$("#stopRecord").click(function(e){
 		console.log("stop recording");
 		isRecording = false;
+		$("#record").prop('disabled', false);
+		$("#record").text('Record Song');
+                $("#stopRecord").prop('disabled', true);
 	});
 
 /*	$("#saveButton").click(function(e){
