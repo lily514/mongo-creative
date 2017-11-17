@@ -29,14 +29,14 @@ $(document).ready(function(){
 		console.log("playing c");
 		audio[0].play();
 		if(isRecording){
-			//add the sound for C to the array
+		  song.push(0);	//add the sound for C to the array
 		}
 	});
 	$("#D").click(function(e){
 		console.log("playing d");
                 audio[1].play();
 		if(isRecording){
-			//add the sound for D to the array
+		  song.push(1);	//add the sound for D to the array
 		}
 	});
 	$("#E").click(function(e){
@@ -44,7 +44,7 @@ $(document).ready(function(){
                 audio[2].play();
 
 		if(isRecording){
-			//add the sound for E to the array
+		  song.push(2); //add the sound for E to the array
 		}
 	});
 	$("#F").click(function(e){
@@ -52,7 +52,7 @@ $(document).ready(function(){
                 audio[3].play();
 		
 		if(isRecording){
-			//add the sound for F to the array
+		  song.push(3);  //add the sound for F to the array
 		}
 	});
 	$("#G").click(function(e){
@@ -60,7 +60,7 @@ $(document).ready(function(){
                 audio[4].play();
 		
 		if(isRecording){
-			//add the sound for G to the array
+		  song.push(4);  //add the sound for G to the array
 		}
 	});
 	$("#A").click(function(e){
@@ -68,7 +68,7 @@ $(document).ready(function(){
                 audio[5].play();
 	
 		if(isRecording){
-			//add the sound for A to the array
+		  song.push(5); //add the sound for A to the array
 		}
 	});
 	$("#B").click(function(e){
@@ -76,7 +76,7 @@ $(document).ready(function(){
                 audio[6].play();
 
 		if(isRecording){
-			//add the sound for B to the array
+		  song.push[6];//add the sound for B to the array
 		}
 	});
 });
