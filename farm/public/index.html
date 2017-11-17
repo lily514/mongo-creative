@@ -25,13 +25,13 @@
 			<button id="record" class="btn btn-success"> Record Song </button>
 			<button id="stopRecord" class="btn btn-danger"> Stop Recording</button>
 			<h2> Save Song </h2>
-			<form> 
+			<form ng-submit="addSong()"> 
 			<div class="form-group">
 			  <label for="songName">Song Name: </label>
-			  <input class="form-control" type="text" id="songName">
+			  <input ng-model="title" class="form-control" type="text" id="songName">
 			  <label for="songArtist">Composer: </label>
-			  <input class="form-control" type="text" id="songArtist">
-			  <button class="btn btn-primary" id="saveButton">Save</button>
+			  <input ng-model="artist" class="form-control" type="text" id="songArtist">
+			  <button type="submit" class="btn btn-primary" id="saveButton">Save</button>
 			</div>
 			</form>
 		</div>
