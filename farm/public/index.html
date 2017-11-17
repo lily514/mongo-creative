@@ -2,11 +2,12 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-		<link rel="stylesheet" href="stylesheets/style.css">
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+		<link rel="stylesheet" href="stylesheets/style2.css">
 		<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 		<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
-
+		<title>Play a Song</title>
 		<script src="javascripts/controller.js"></script> 
 	</head>
 	<body ng-app="sound" ng-controller="MainCtrl">
@@ -21,25 +22,30 @@
 			<img id="A" src="images/key_6.png">
 			<img id="B" src="images/key_7.png">
 		</div>
+	<div id="form-container">
 		<div id = "form">		
-			<button id="record" class="btn btn-success"> Record Song </button>
-			<button id="stopRecord" class="btn btn-danger"> Stop Recording</button>
 			<h2> Save Song </h2>
+                 	<button id="record" class="btn btn-lg btn-success"> Record Song </button>
+                        <button id="stopRecord" class="btn btn-lg btn-danger"> Stop Recording</button>
 			<form ng-submit="addSong()"> 
 			<div class="form-group">
 			  <label for="songName">Song Name: </label>
 			  <input ng-model="title" class="form-control" type="text" id="songName">
 			  <label for="songArtist">Composer: </label>
 			  <input ng-model="artist" class="form-control" type="text" id="songArtist">
-			  <button type="submit" class="btn btn-primary" id="saveButton">Save</button>
+			  <button type="submit" class="btn btn-primary btn-lg btn-block" id="saveButton">Save</button>
 			</div>
 			</form>
 		</div>
-		<div id="songlist" ng-repeat="song in songList">
+		</div>
+		<div id="songlist">
+			<h2> Saved Songs </h2>
+		<div id="song" ng-repeat="song in songList">
 			{{song.title}} by {{song.artist}} : {{song.song}}
-         		 <button type="button" class="btn btn-info btn-sm" ng-click="playSong(song)">
+         		 <button type="button" class="btn btn-primary btn-sm" ng-click="playSong(song)">
           			<span class="glyphicon glyphicon-play"></span> Play
         		 </button>
+		</div>
 		</div>
 		</div><!--end of center-->	
 	</body>

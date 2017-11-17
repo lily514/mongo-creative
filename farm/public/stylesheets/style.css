@@ -1,17 +1,17 @@
-h1 {
-	text-align: center;
-	font-family: Lato, sans-serif;
+body {
+	text-align:center;
+	font-family: 'Lato', sans-serif;
 }
 
 img {
 	width: 12%;
-	vertical-align: middle;
+	vertical-align: middle;*/
 }
 
 img:hover {
 	opacity: .7;
 }
-
+/*
 #center {
 	position: absolute;
 	margin: auto;
@@ -19,11 +19,15 @@ img:hover {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	width: 70%;
-	height: 70%;
+	width: 60%;
+	height: 80%;
+}
+*/
+#keyboard, #form, #songlist {
+	height:30%
 }
 
-#keyboard {
+/*#keyboard {
 	padding: 0;
 	margin-left: auto;
 	margin-right: auto;
@@ -33,14 +37,4 @@ img:hover {
 	height: 50%;
 	width: 100%;
 }
-
-#form {
-        padding: 0;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: auto;
-        margin-bottom: auto;
-        text-align: center;
-        height: 50%;
-        width: 100%;
-}
+*/
