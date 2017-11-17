@@ -35,10 +35,12 @@
 			</div>
 			</form>
 		</div>
-	<!---	<div id="songlist" ng-repeat="song in songlist">
-			{{song.name}} by  {{song.artist}} 
-			<span class="glyphicon glyphicon-play" ng-click="play(song"></span>
-		</div>-->
-		</div> <!--end of center-->	
+		<div id="songlist" ng-repeat="song in songList">
+			{{song.title}} by {{song.artist}} : {{song.song}}
+         		 <button type="button" class="btn btn-info btn-sm" ng-click="playSong(song)">
+          			<span class="glyphicon glyphicon-play"></span> Play
+        		 </button>
+		</div>
+		</div><!--end of center-->	
 	</body>
 </html>

@@ -5,6 +5,7 @@ angular.module('sound', [])
 function($scope, $http) {
   $scope.songList = [];
   $scope.song = [];
+  $scope.audio = [];
   $scope.create = function(song) {
   	return $http.post('/songs', song).success(function(data){
 		$scope.songList.push(data);
@@ -14,7 +15,9 @@ function($scope, $http) {
 
 	if ($scope.title === '') {return;}
 	if ($scope.artist === '') {return;}
-	if ($scope.song === [] ) {return;}
+	if ($scope.song.length === 0 ) {
+		alert("Must start recording to save a song!");
+		return;}
 	console.log("save song" + $scope.song.toString());
 
 	$scope.create({
@@ -23,10 +26,30 @@ function($scope, $http) {
 		song: $scope.song
         });
   };
+  $scope.getSongs = function() {
+	return $http.get('/songs').success(function(data) { 
+		$scope.songList = data;
+	});
+  };
+  $scope.playSong = function(song) {
+	console.log("playing . . .");
+	var i = 1;
+	song.song.forEach(function(note) {
+	  console.log("delay: "+700*i);
+	  setTimeout( 
+		function(note) {
+        	  console.log(note);
+        	  $scope.audio[note].play();
+  		}, 700*i, note);  
+	  i += 1;
+	}); 
+  };
+
   angular.element(document).ready(function () {
 	console.log("hello");
+	$scope.getSongs();
 	var isRecording = false;
-	var audio = [
+	$scope.audio = [
 		new Audio('audio/sound_wookie.mp3'),
 		new Audio('audio/sound_trap.mp3'),
 		new Audio('audio/sound_r2d2.mp3'),
@@ -54,21 +77,21 @@ function($scope, $http) {
 	//keys
 	$("#C").click(function(e){
 		console.log("playing c");
-		audio[0].play();
+		$scope.audio[0].play();
 		if(isRecording){
 		 $scope.song.push(0);	//add the sound for C to the array
 		}
 	});
 	$("#D").click(function(e){
 		console.log("playing d");
-                audio[1].play();
+                $scope.audio[1].play();
 		if(isRecording){
 		  $scope.song.push(1);	//add the sound for D to the array
 		}
 	});
 	$("#E").click(function(e){
 		console.log("playing e");
-                audio[2].play();
+                $scope.audio[2].play();
 
 		if(isRecording){
 		 $scope.song.push(2); //add the sound for E to the array
@@ -76,7 +99,7 @@ function($scope, $http) {
 	});
 	$("#F").click(function(e){
 		console.log("playing f");
-                audio[3].play();
+                $scope.audio[3].play();
 		
 		if(isRecording){
 		  $scope.song.push(3);  //add the sound for F to the array
@@ -84,7 +107,7 @@ function($scope, $http) {
 	});
 	$("#G").click(function(e){
 		console.log("playing g");
-                audio[4].play();
+                $scope.audio[4].play();
 		
 		if(isRecording){
 		  $scope.song.push(4);  //add the sound for G to the array
@@ -92,7 +115,7 @@ function($scope, $http) {
 	});
 	$("#A").click(function(e){
 		console.log("playing a");
-                audio[5].play();
+                $scope.audio[5].play();
 	
 		if(isRecording){
 		  $scope.song.push(5); //add the sound for A to the array
@@ -100,7 +123,7 @@ function($scope, $http) {
 	});
 	$("#B").click(function(e){
 		console.log("playing b");
-                audio[6].play();
+                $scope.audio[6].play();
 
 		if(isRecording){
 		  $scope.song.push[6];//add the sound for B to the array
