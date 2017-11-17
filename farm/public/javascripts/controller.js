@@ -1,4 +1,9 @@
-$(document).ready(function(){
+angular.module('sound', [])
+
+.controller('MainCtrl', [
+'$scope',
+function($scope) {
+  angular.element(document).ready(function () {
 	console.log("hello");
 	var isRecording = false;
 	var song = []; //array for the noises
@@ -79,4 +84,6 @@ $(document).ready(function(){
 		  song.push[6];//add the sound for B to the array
 		}
 	});
-});
+   });//end of document ready
+}//end of function
+]); //end of module

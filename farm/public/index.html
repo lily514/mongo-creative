@@ -5,9 +5,11 @@
 		<link rel="stylesheet" href="stylesheets/style.css">
 		<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 		<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+
 		<script src="javascripts/controller.js"></script> 
 	</head>
-	<body>
+	<body ng-app="sound" ng-controller="MainCtrl">
 		<h1>Play a song</h1>
 		<div id = "center" >
 		<div id = "keyboard">
@@ -33,6 +35,10 @@
 			</div>
 			</form>
 		</div>
+	<!---	<div id="songlist" ng-repeat="song in songlist">
+			{{song.name}} by  {{song.artist}} 
+			<span class="glyphicon glyphicon-play" ng-click="play(song"></span>
+		</div>-->
 		</div> <!--end of center-->	
 	</body>
 </html>
